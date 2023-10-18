@@ -1,0 +1,231 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: #8000FF;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: #000;
+  color: var(--text-color);
+}
+
+img {
+  display: block;
+
+  height: auto;
+  
+}
+
+/*=============== CARD ===============*/
+.container {
+  margin-top: 10vh;
+  display: grid;
+  place-items: center;
+  width: 100;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra cinza ao container */
+}
+
+.card__container {
+  display: grid;
+  row-gap: 3.5rem;
+  
+ 
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.card__img {
+  width: 1008px;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 4px #8000FF /* Adiciona uma sombra cinza à imagem */
+}
+
+.card__data {
+  width: 480px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__description {
+  display: block;
+color:rgb(212, 212, 212);
+  margin-bottom: .25rem;
+ font-size: 14px;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+}
+.card__button {
+  padding: 5px 20px;
+  color: white; /* Altere a cor do texto para branca */
+  text-decoration: none; /* Remova o sublinhado */
+  font-size: 17px;
+  font-weight: 500;
+  background-color: #511b84;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Adicione transições para background-color e color */
+}
+
+.card__button a {
+  color: rgb(196, 181, 221); /* Define a cor do link como branca (caso o link esteja presente) */
+  text-decoration: none; /* Remova o sublinhado do link */
+}
+
+.card__button:hover {
+  background-color: #b594d5;
+  text-decoration: none; /* Remova o sublinhado no hover */
+  color: #812eb0;
+}
+
+.card__button a:hover {
+  color: rgb(106, 71, 164); /* Define a cor do link como branca (caso o link esteja presente) */
+  text-decoration: none; /* Remova o sublinhado do link */
+}
+
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}

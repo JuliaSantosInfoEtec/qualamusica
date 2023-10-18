@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" alt="Logo: Qual é a música?">
+    <link rel="stylesheet" href="nivel.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+    <title>Escolhe seu nível:</title>
+    <header>
+
+      <img src="logoEtec.png" alt="Logo da escola ETEC" id="img">
+      <nav>
+          <ul>
+             <li> <a href="https://etecdarcypereirademoraes.com.br/"><img src="logoSite.png" alt="Ícone do site da escola Etec, clicando nele direciona direto para o site oficial" id="insta"></a> </li>
+              <li><a href="https://www.instagram.com/etecdarcypereira/"><img src="logoInstagram.png" alt="Ícone do Instagram, clicando nele direciona direto para o perfil da escola" id="insta" height="80" width="80"></a></li>
+              <li><a href="https://www.google.com/maps/place/Etec+Darcy+Pereira+de+Moraes/@-23.6274589,-48.0448651,17z/data=!3m1!4b1!4m6!3m5!1s0x94c5cba99a9f4e91:0xc97bceb3a2e1cc0d!8m2!3d-23.6274589!4d-48.0422902!16s%2Fg%2F11b6hf8ytq?entry=ttu"><img src="logoLocal.png" alt="Ícone da localização, clicando nele direciona direto para o endereço da escola" id="insta" height="80" width="80"></a></li>
+          </ul>
+      </nav>
+  </header>
+    <style>
+        /* Estilos para centralizar e estilizar o texto */
+        strong {
+         margin-top: vh;
+         justify-content: center;
+           
+            color: #a787d0; /* Define a cor do texto */
+            font-size: 3vw; /* Define o tamanho da fonte */
+            font-weight: bold; /* Define a espessura da fonte como negrito */
+          
+            position: relative;
+            display: flex;
+        }
+
+        #textoRecebido {
+            margin-left: 10px; /* Adiciona 10px de margem esquerda para criar espaço entre "Olá" e o texto recebido */
+        }
+    </style>
+</head>
+<p>
+   <strong> <center>Olá, <span id="textoRecebido"> </span>!</center></strong>
+
+   </p>
+   <p class="escolha">Escolha seu nível adequado para jogar:</p>
+
+   <style>
+      /* Estilos para centralizar e estilizar o texto */
+      .escolha{
+       
+       justify-content: center;
+         
+          color: #8000FF; /* Define a cor do texto */
+          font-size: 3vw; /* Define o tamanho da fonte */
+          font-weight: bold; /* Define a espessura da fonte como negrito */
+        margin-top: -3vh;
+          position: relative;
+          display: flex;
+      }
+  </style>
+
+<div class="container">
+   <!-- Seu conteúdo aqui -->
+</div>
+
+<script>
+   // Captura o texto da URL
+   var parametroTexto = new URLSearchParams(window.location.search).get("texto");
+
+   if (parametroTexto) {
+       // Se o texto foi encontrado na URL, exibe-o
+       var textoDecodificado = decodeURIComponent(parametroTexto);
+       document.getElementById("textoRecebido").textContent = textoDecodificado;
+   }
+</script>
+
+<body>
+ 
+    <div class="container">
+        <div class="card__container">
+            <article class="card__article">
+                <img src="nivelfacil.gif" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">
+                        <center>Neste nível, serão desafiadas músicas de funk famosas e recentes. Atente-se para ouvir e acertar os sucessos.</center>
+                    </span>
+                    <h2 class="card__title"></h2>
+                    <center>
+                        <a href="facil.html">
+                            <button id="start-game" onclick="startGame()">clique aqui</button>
+                        </a>
+                    </center>
+                </div>
+            </article>
+
+            <article class="card__article">
+               <img src="nivelmedio.gif" alt="image" class="card__img">
+               <div class="card__data">
+                  <span class="card__description">
+                    <center>Nesse nível, as músicas podem não ser óbvias, mas com concentração há chances de acertar!</center></span>
+                  <h2 class="card__title"></h2>
+                     <center> 
+                        <a href="medio.html">
+                        <button id="start-game" onclick="startGame()">clique aqui</button>
+                    </a>
+                </center>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="niveldificil.gif" alt="image" class="card__img">
+
+               <div class="card__data">
+                <span class="card__description">
+                    <center>Neste nivel, incluem músicas menos conhecidas, tornando-o um desafio para os aficionados do funk.</center></span>
+                  <h2 class="card__title"></h2>
+                  <center> 
+                    <a href="dificil.html">
+                    <button id="start-game" onclick="startGame()">clique aqui</button>
+                </a>
+               </div>
+            </article>
+         </div>
+      </div>
+      <footer>
+         <div class="row">
+             <div class="col">
+                 <img src="logoEtec.png" class="footer_logo">
+                 <p class="footer_about">A ETEC está realizando uma feira voltada para jovens e adultos interessados em conhecer os cursos e a estrutura da unidade antes de se inscreverem no
+                      processo seletivo. É uma oportunidade para explorar as opções educacionais e iniciar sua jornada acadêmica e profissional.
+
+
+
+
+
+
+                 </p>
+             </div>
+             <div class="col">
+                 <h3>Sobre a escola <div class="bottom_line"><span></span></div></h3>
+                 <p> R. Moisés Nalesso, 2888</p>
+                 <p> Vila Sao Gonçalo</p>
+                 <p>Itapetininga - SP</p>
+                 <p class="footer_email">e261dir@cps.sp.gov.br</p>
+                 <h4>Telefone: (15) 3271-1216</h4>
+             </div>
+             <div class="col">
+                 <h3>Cursos <div class="bottom_line"><span></span></div></h3>
+                 <ul>
+                     <li><a href="https://etecdarcypereirademoraes.com.br/tecnico-em-administracao/">Administração</a></li>
+                     <li><a href="https://etecdarcypereirademoraes.com.br/servicos-juridicos/">Serviços Jurídicos</a></li>
+                     <li><a href="https://etecdarcypereirademoraes.com.br/tecnico-enfermagem/">Enfermagem</a></li>
+                     <li><a href="https://etecdarcypereirademoraes.com.br/wp-content/uploads/2023/08/Recursos-Humanos-800_CS_atualizado-em-10-10-22.pdf">Recursos Humanos</a></li>
+                 </ul>
+             </div>
+             <div class="col">
+                 <h3> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.355011696682!2d-48.044865125604055!3d-23.627453964021853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5cba99a9f4e91%3A0xc97bceb3a2e1cc0d!2sEtec%20Darcy%20Pereira%20de%20Moraes!5e0!3m2!1spt-BR!2sbr!4v1694219727338!5m2!1spt-BR!2sbr" 
+                     width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <div class="bottom_lin"><span></span></div></h3>
+                 <form>
+                   
+                 </form>
+                 <div class="social_icons">
+                     <a href=https://www.facebook.com/etecdpmitapetininga/?locale=pt_BR"> <ion-icon class="social_icon" name="logo-facebook"></ion-icon></a>
+                    
+                     
+                     <a href="https://www.instagram.com/etecdarcypereira/">  <ion-icon class="social_icon" name="logo-instagram"></ion-icon></a>
+                 </div>
+             </div>
+         </div>
+         <hr>
+         <p class="copyright">Desenvolvido por: Julia Santos e Kauane Vieira</p>
+         
+      </footer>
+   </body>
+   
+</html>
